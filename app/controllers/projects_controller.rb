@@ -1,2 +1,15 @@
 class ProjectsController < ApplicationController
+
+  def index
+    @routes = %w[ FAQ Learn\ More Documentation Community About ]
+    dummy_stuffs = %w[ this_is_kinda_cool what_do_you_think_? oh_time_is_up ]
+    @dummies = dummy_stuffs
+    @projects = Project.all
+  end
+
+  def show
+    # params = { "id" => "1"}
+    @project = Project.find(params[:id])
+  end
+
 end

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :todos
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  #
+  get "/projects", to: "projects#index"
+  
+  # TO_BE_DELETED: this bad boi is similar to those dynamic url thingies
+  get "/projects/:id", to: "projects#show", as: "project"
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

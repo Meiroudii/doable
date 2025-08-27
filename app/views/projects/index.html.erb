@@ -1,0 +1,18 @@
+<h1>Projects</h1>
+<nav>
+  <% @dummies.each do | dummy| %>
+    <a href="#"><%= dummy %></a>
+  <% end %>
+</nav>
+<br>
+<ul>
+  <% @projects.each do |project| %>
+    <li><%= project.name %></li>
+  <% end %>
+</ul>
+
+<footer>
+  <% @routes.each do |route| %>
+    <a href="#"><%= route %></a>
+  <% end %>
+</footer>
