@@ -12,9 +12,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def new
-    @project = Project.new
-  end
+  define_method(:new) { @project = Project.new }
+#  def new
+#    @project = Project.new
+#  end
 
   def create
     @project = Project.new(project_params)
@@ -33,6 +34,17 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.update(project_params)
+      redirect_to project_path(@project)
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   # these bois are strong parameters
