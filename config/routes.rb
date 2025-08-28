@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # TO_BE_DELETED: this bad boi is similar to those dynamic url thingies
   get "/projects/new", to: "projects#new", as: "new_project"
   get "/projects/:id", to: "projects#show", as: "project"
+  get "/projects/:id/edit", to: "projects#edit", as: "edit_project"
   post "/projects", to: "projects#create"
 
 

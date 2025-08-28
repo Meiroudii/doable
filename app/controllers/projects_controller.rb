@@ -27,8 +27,12 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to project_path(@project)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @project = Project.find(params[:id])
   end
 
   # these bois are strong parameters
