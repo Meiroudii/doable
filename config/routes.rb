@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/projects", to: "projects#index"
   
   # TO_BE_DELETED: this bad boi is similar to those dynamic url thingies
+  get "/projects/new", to: "projects#new", as: "new_project"
   get "/projects/:id", to: "projects#show", as: "project"
 
 
