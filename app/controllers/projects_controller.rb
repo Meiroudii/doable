@@ -6,11 +6,11 @@ class ProjectsController < ApplicationController
     @dummies = dummy_stuffs
     @projects = Project.all
   end
-
-  def show
+#  def show
     # params = { "id" => "1"}
-    @project = Project.find(params[:id])
-  end
+#    @project = Project.find(params[:id])
+#  end
+  define_method(:show) { @project = Project.find(params[:id])}
 
   define_method(:new) { @project = Project.new }
 #  def new
