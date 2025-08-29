@@ -11,16 +11,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <fieldset>
+    <legend>Todo:</legend>
+    <div>
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
-  </div>
+    <div>
+      <%= form.label :description, style: "display: block" %>
+      <%= form.textarea :description %>
+    </div>
 
+    <div>
+      <%= form.label :completed, style: "display: block" %>
+      <%= form.check_box :completed %>
+    </div>
+
+    <div>
+      <%= form.label :priority, style: "display: block" %>
+      <%= form.number_field :priority %>
+    </div>
+
+    </fieldset>
   <div>
     <%= form.submit %>
   </div>
