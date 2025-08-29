@@ -11,7 +11,6 @@ class ProjectsController < ApplicationController
 #    @project = Project.find(params[:id])
 #  end
   define_method(:show) { @project = Project.find(params[:id])}
-
   define_method(:new) { @project = Project.new }
 #  def new
 #    @project = Project.new
@@ -34,10 +33,11 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def edit
-    @page_info = "edit"
-    @project = Project.find(params[:id])
-  end
+#  def edit
+#    @page_info = "edit"
+#    @project = Project.find(params[:id])
+#  end
+  define_method(:edit) { @page_info = "edit"; @project = Project.find(params[:id]) }
 
   def update
     @project = Project.find(params[:id])
@@ -48,7 +48,6 @@ class ProjectsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-
   end
 
   def destroy
@@ -60,7 +59,8 @@ class ProjectsController < ApplicationController
   end
 
   # these bois are strong parameters
-  def project_params
-    params.require(:project).permit(:name)
-  end
+#  def project_params
+#    params.require(:project).permit(:name)
+#  end
+  define_method(:project_params) { params.require(:project).permit(:name) }
 end
