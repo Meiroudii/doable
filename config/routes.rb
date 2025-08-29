@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/projects/:id/edit", to: "projects#edit", as: "edit_project"
   post "/projects", to: "projects#create"
   patch "/projects/:id", to: "projects#update"
+  delete "/projects/:id", to: "projects#destroy"
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
