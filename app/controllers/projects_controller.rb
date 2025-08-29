@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
 #  end
 
   def create
+    @page_info = "edit"
     @project = Project.new(project_params)
     # {
     # "project" =>
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @page_info = "edit"
     @project = Project.find(params[:id])
   end
 
@@ -42,7 +44,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to project_path(@project)
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
 
   end

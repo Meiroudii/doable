@@ -1,0 +1,31 @@
+<%= form_with model: @project do |f| %>
+
+  <% if @project.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being save.</h2>
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>
+      <% if @page_info == "edit" %>
+        Changing plans lad?
+      <% else %>
+        Planning a new project lad?
+      <% end %>
+    </legend>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create Project" %>
+    </div>
+  </fieldset>
+<% end %>
