@@ -1,5 +1,13 @@
 <h1><%= @project.name %> <span><%= link_to "rename", edit_project_path(@project) %></span></h1>
-<p>Project details coming soon...</p>
+
+<ul>
+  <% @project.todos.each do |todo| %>
+    <li>
+      <%= link_to todo.name, todo_path(todo) %>
+      <% if todo.completed %>[/]<% end %>
+    </li>
+  <% end %>
+</ul>
 
 <%= button_to "Delete this project", project_path(@project), method: :delete %>
 <%= link_to "<<<", projects_path %>
