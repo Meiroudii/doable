@@ -9,4 +9,19 @@
     <%= todo.description %>
   </p>
 
+  <p>
+    <strong>Completed:</strong>
+    <%= todo.completed %>
+  </p>
+
+  <p>
+    <strong>Priority:</strong>
+    <%= todo.priority %>
+  </p>
+
+  <p>
+    <strong>Project:</strong>
+    <%= link_to todo.project.name, project_path(todo.project) %>
+  </p>
+
 </div>
