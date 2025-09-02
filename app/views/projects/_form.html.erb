@@ -12,7 +12,7 @@
   <% end %>
 
   <fieldset>
-    <legend>
+    <legend class="text-gray-500">
       <% if page_info == "edit" %>
         Changing plans lad?
       <% else %>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Create Project" %>
+      <%= f.submit "Create Project", class: "bg-green-500"%>
     </div>
   </fieldset>
 <% end %>
