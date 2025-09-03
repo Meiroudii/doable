@@ -1,12 +1,20 @@
 <% content_for :title, "Editing todo" %>
 
-<h1>Editing todo</h1>
-
-<%= render "form", todo: @todo %>
-
-<br>
-
-<div>
-  <%= link_to "Show this todo", @todo %> |
-  <%= link_to "Back to todos", todos_path %>
+<div class="md:grid md:grid-cols-3 md:gap-6">
+  <div class="md:col-span-1">
+    <div class=" px-4 sm:px-0">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">
+        Edit Todo
+      </h1>
+      <p class="mt-1 test-sm text-gray-600">
+        Update the details of your todo.
+      </p>
+      <div class="mt-6">
+        <%= link_to "View Todo", @todo, class: "text-indigo-600 hover:text-indigo-900" %>
+        <span class="text-gray-500 mx-2">|</span>
+        <%= link_to "Back to Todos", todos_path, class: "text-indigo-600 hover:text-ind"
+      </div>
+    </div>
+  </div>
 </div>
+
