@@ -7,5 +7,3 @@ bin/rails assets:precompile
 bin/rails assets:clean
 
 bin/rails db:migrate
-bin/rails credentials:edit --environment=production
-bin/rails secret
